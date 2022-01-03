@@ -42,11 +42,11 @@ float Compressor::expanderSample(float data, float threshold, float ratio, float
     float dbRMS=10*std::log10(rms);
     
     float slope=1-(1/ratio);
-    float dbGain=std::m(0.0f,(slope*(threshold-dbRMS)));
+    float dbGain=std::max(0.0f,(slope*(threshold-dbRMS)));
     float newGain=std::pow(10,dbGain/20);
     
     float coeff;
-    if(newGain>gain) coeff=attack;
+    if(newGain<gain) coeff=attack;
     else coeff=release;
     gain=(1-coeff)*gain+coeff*newGain;
     
