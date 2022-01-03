@@ -3,7 +3,7 @@
 
     CircularBuffer.cpp
     Created: 2 Apr 2020 2:07:25pm
-    Author:  R
+    Author:  Reputation
 
   ==============================================================================
 */
